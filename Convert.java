@@ -56,7 +56,9 @@ public class Convert {
                     numberToConvert.charAt(i) != 'X' && numberToConvert.charAt(i) != 'x' && numberToConvert.charAt(i) != '>' &&
                     numberToConvert.charAt(i) != 'Y' && numberToConvert.charAt(i) != 'y' && numberToConvert.charAt(i) != ',' &&
                     numberToConvert.charAt(i) != 'Z' && numberToConvert.charAt(i) != 'z' && numberToConvert.charAt(i) != '.' &&
-                    numberToConvert.charAt(i) != '+' && numberToConvert.charAt(i) != ';' && numberToConvert.charAt(i) != ':' ) {
+                    numberToConvert.charAt(i) != '+' && numberToConvert.charAt(i) != ';' && numberToConvert.charAt(i) != ':' &&
+                    numberToConvert.charAt(i) != '€'
+                 ) {
                 numberToConvertList.add(String.valueOf(numberToConvert.charAt(i)));
             }
             if (numberToConvert.charAt(i) == 'A' || numberToConvert.charAt(i) == 'a') {
@@ -223,6 +225,9 @@ public class Convert {
             }
             if (numberToConvert.charAt(i) == '.') {
                 numberToConvertList.add("64");
+            }
+            if (numberToConvert.charAt(i) == '+') {
+                numberToConvertList.add("65");
             }
 
         }
@@ -661,6 +666,8 @@ public class Convert {
                 makingCharacterList.add(",");
             } else if (newFinalNumberList[i] == 64) {
                 makingCharacterList.add(".");
+            }else if (newFinalNumberList[i] == 65) {
+                makingCharacterList.add("+");
             } else {
                 makingCharacterList.add(newFinalNumberList[i].toString());
             }
