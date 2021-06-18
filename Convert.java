@@ -22,27 +22,41 @@ public class Convert {
         int systemEnd = scanner.nextInt();
 
 
-        if (numberToConvert.charAt(0) == '-' || numberToConvert.charAt(0) == '0') {
-            System.out.printf("Wpisz liczbę dodatnią!");
-            for(int i = 0; i > -1; i++){
-                break;
-            }
-        }
-        if (systemEnd < 1 || systemStart < 1 || systemStart > 36 || systemEnd > 36) {
-            System.out.println("Nie umiem jeszcze konwertować na system mniejszy, niż 1, ani większy niż 36!");
-            for(int i = 0; i > -1; i++){
-                break;
-            }
+        if (systemEnd < 1 || systemStart < 1 || systemStart > 65 || systemEnd > 65) {
+            System.out.println("Nie umiem jeszcze konwertować na system mniejszy, niż 1, ani większy niż 66!");
         }
 
         List<String> numberToConvertList = new ArrayList<>();
 
 
         for (int i = 0; i < numberToConvert.length(); i++) {
-            if (numberToConvert.charAt(i) != 'A' && numberToConvert.charAt(i) != 'B' && numberToConvert.charAt(i) != 'C' &&
-                    numberToConvert.charAt(i) != 'D' && numberToConvert.charAt(i) != 'E' && numberToConvert.charAt(i) != 'F' &&
-            numberToConvert.charAt(i) != 'a' && numberToConvert.charAt(i) != 'b' && numberToConvert.charAt(i) != 'c' &&
-                    numberToConvert.charAt(i) != 'd' && numberToConvert.charAt(i) != 'e' && numberToConvert.charAt(i) != 'f') {
+                 if(numberToConvert.charAt(i) != 'A' && numberToConvert.charAt(i) != 'a' && numberToConvert.charAt(i) != '~' &&
+                    numberToConvert.charAt(i) != 'B' && numberToConvert.charAt(i) != 'b' && numberToConvert.charAt(i) != '`' &&
+                    numberToConvert.charAt(i) != 'C' && numberToConvert.charAt(i) != 'c' && numberToConvert.charAt(i) != '!' &&
+                    numberToConvert.charAt(i) != 'D' && numberToConvert.charAt(i) != 'd' && numberToConvert.charAt(i) != '@' &&
+                    numberToConvert.charAt(i) != 'E' && numberToConvert.charAt(i) != 'e' && numberToConvert.charAt(i) != '#' &&
+                    numberToConvert.charAt(i) != 'F' && numberToConvert.charAt(i) != 'f' && numberToConvert.charAt(i) != '$' &&
+                    numberToConvert.charAt(i) != 'G' && numberToConvert.charAt(i) != 'g' && numberToConvert.charAt(i) != '%' &&
+                    numberToConvert.charAt(i) != 'H' && numberToConvert.charAt(i) != 'h' && numberToConvert.charAt(i) != '^' &&
+                    numberToConvert.charAt(i) != 'I' && numberToConvert.charAt(i) != 'i' && numberToConvert.charAt(i) != '&' &&
+                    numberToConvert.charAt(i) != 'J' && numberToConvert.charAt(i) != 'j' && numberToConvert.charAt(i) != '*' &&
+                    numberToConvert.charAt(i) != 'K' && numberToConvert.charAt(i) != 'k' && numberToConvert.charAt(i) != '(' &&
+                    numberToConvert.charAt(i) != 'L' && numberToConvert.charAt(i) != 'l' && numberToConvert.charAt(i) != ')' &&
+                    numberToConvert.charAt(i) != 'M' && numberToConvert.charAt(i) != 'm' && numberToConvert.charAt(i) != '_' &&
+                    numberToConvert.charAt(i) != 'N' && numberToConvert.charAt(i) != 'n' && numberToConvert.charAt(i) != '-' &&
+                    numberToConvert.charAt(i) != 'O' && numberToConvert.charAt(i) != 'o' && numberToConvert.charAt(i) != '=' &&
+                    numberToConvert.charAt(i) != 'P' && numberToConvert.charAt(i) != 'p' && numberToConvert.charAt(i) != '[' &&
+                    numberToConvert.charAt(i) != 'Q' && numberToConvert.charAt(i) != 'q' && numberToConvert.charAt(i) != ']' &&
+                    numberToConvert.charAt(i) != 'R' && numberToConvert.charAt(i) != 'r' && numberToConvert.charAt(i) != '{' &&
+                    numberToConvert.charAt(i) != 'S' && numberToConvert.charAt(i) != 's' && numberToConvert.charAt(i) != '}' &&
+                    numberToConvert.charAt(i) != 'T' && numberToConvert.charAt(i) != 't' && numberToConvert.charAt(i) != '|' &&
+                    numberToConvert.charAt(i) != 'U' && numberToConvert.charAt(i) != 'u' && numberToConvert.charAt(i) != '/' &&
+                    numberToConvert.charAt(i) != 'V' && numberToConvert.charAt(i) != 'v' && numberToConvert.charAt(i) != '?' &&
+                    numberToConvert.charAt(i) != 'W' && numberToConvert.charAt(i) != 'w' && numberToConvert.charAt(i) != '<' &&
+                    numberToConvert.charAt(i) != 'X' && numberToConvert.charAt(i) != 'x' && numberToConvert.charAt(i) != '>' &&
+                    numberToConvert.charAt(i) != 'Y' && numberToConvert.charAt(i) != 'y' && numberToConvert.charAt(i) != ',' &&
+                    numberToConvert.charAt(i) != 'Z' && numberToConvert.charAt(i) != 'z' && numberToConvert.charAt(i) != '.' &&
+                    numberToConvert.charAt(i) != '+' && numberToConvert.charAt(i) != ';' && numberToConvert.charAt(i) != ':' ) {
                 numberToConvertList.add(String.valueOf(numberToConvert.charAt(i)));
             }
             if (numberToConvert.charAt(i) == 'A' || numberToConvert.charAt(i) == 'a') {
@@ -63,13 +77,161 @@ public class Convert {
             if (numberToConvert.charAt(i) == 'F' || numberToConvert.charAt(i) == 'f') {
                 numberToConvertList.add("15");
             }
+            if (numberToConvert.charAt(i) == 'G' || numberToConvert.charAt(i) == 'g') {
+                numberToConvertList.add("16");
+            }
+            if (numberToConvert.charAt(i) == 'H' || numberToConvert.charAt(i) == 'h') {
+                numberToConvertList.add("17");
+            }
+            if (numberToConvert.charAt(i) == 'I' || numberToConvert.charAt(i) == 'i') {
+                numberToConvertList.add("18");
+            }
+            if (numberToConvert.charAt(i) == 'J' || numberToConvert.charAt(i) == 'j') {
+                numberToConvertList.add("19");
+            }
+            if (numberToConvert.charAt(i) == 'K' || numberToConvert.charAt(i) == 'k') {
+                numberToConvertList.add("20");
+            }
+            if (numberToConvert.charAt(i) == 'L' || numberToConvert.charAt(i) == 'l') {
+                numberToConvertList.add("21");
+            }
+            if (numberToConvert.charAt(i) == 'M' || numberToConvert.charAt(i) == 'm') {
+                numberToConvertList.add("22");
+            }
+            if (numberToConvert.charAt(i) == 'N' || numberToConvert.charAt(i) == 'n') {
+                numberToConvertList.add("23");
+            }
+            if (numberToConvert.charAt(i) == 'O' || numberToConvert.charAt(i) == 'o') {
+                numberToConvertList.add("24");
+            }
+            if (numberToConvert.charAt(i) == 'P' || numberToConvert.charAt(i) == 'p') {
+                numberToConvertList.add("25");
+            }
+            if (numberToConvert.charAt(i) == 'Q' || numberToConvert.charAt(i) == 'q') {
+                numberToConvertList.add("26");
+            }
+            if (numberToConvert.charAt(i) == 'R' || numberToConvert.charAt(i) == 'r') {
+                numberToConvertList.add("27");
+            }
+            if (numberToConvert.charAt(i) == 'S' || numberToConvert.charAt(i) == 's') {
+                numberToConvertList.add("28");
+            }
+            if (numberToConvert.charAt(i) == 'T' || numberToConvert.charAt(i) == 't') {
+                numberToConvertList.add("29");
+            }
+            if (numberToConvert.charAt(i) == 'U' || numberToConvert.charAt(i) == 'u') {
+                numberToConvertList.add("30");
+            }
+            if (numberToConvert.charAt(i) == 'V' || numberToConvert.charAt(i) == 'v') {
+                numberToConvertList.add("31");
+            }
+            if (numberToConvert.charAt(i) == 'W' || numberToConvert.charAt(i) == 'w') {
+                numberToConvertList.add("32");
+            }
+            if (numberToConvert.charAt(i) == 'X' || numberToConvert.charAt(i) == 'x') {
+                numberToConvertList.add("33");
+            }
+            if (numberToConvert.charAt(i) == 'Y' || numberToConvert.charAt(i) == 'y') {
+                numberToConvertList.add("34");
+            }
+            if (numberToConvert.charAt(i) == 'Z' || numberToConvert.charAt(i) == 'z') {
+                numberToConvertList.add("35");
+            }
+            if (numberToConvert.charAt(i) == '€') {
+                numberToConvertList.add("36");
+            }
+            if (numberToConvert.charAt(i) == '~') {
+                numberToConvertList.add("37");
+            }
+            if (numberToConvert.charAt(i) == '`') {
+                numberToConvertList.add("38");
+            }
+            if (numberToConvert.charAt(i) == '!') {
+                numberToConvertList.add("39");
+            }
+            if (numberToConvert.charAt(i) == '@') {
+                numberToConvertList.add("40");
+            }
+            if (numberToConvert.charAt(i) == '#') {
+                numberToConvertList.add("41");
+            }
+            if (numberToConvert.charAt(i) == '$') {
+                numberToConvertList.add("42");
+            }
+            if (numberToConvert.charAt(i) == '%') {
+                numberToConvertList.add("43");
+            }
+            if (numberToConvert.charAt(i) == '^') {
+                numberToConvertList.add("44");
+            }
+            if (numberToConvert.charAt(i) == '&') {
+                numberToConvertList.add("45");
+            }
+            if (numberToConvert.charAt(i) == '*') {
+                numberToConvertList.add("46");
+            }
+            if (numberToConvert.charAt(i) == '(') {
+                numberToConvertList.add("47");
+            }
+            if (numberToConvert.charAt(i) == ')') {
+                numberToConvertList.add("48");
+            }
+            if (numberToConvert.charAt(i) == '_') {
+                numberToConvertList.add("49");
+            }
+            if (numberToConvert.charAt(i) == '-') {
+                numberToConvertList.add("50");
+            }
+            if (numberToConvert.charAt(i) == '=') {
+                numberToConvertList.add("51");
+            }
+            if (numberToConvert.charAt(i) == '[') {
+                numberToConvertList.add("52");
+            }
+            if (numberToConvert.charAt(i) == ']') {
+                numberToConvertList.add("53");
+            }
+            if (numberToConvert.charAt(i) == '{') {
+                numberToConvertList.add("54");
+            }
+            if (numberToConvert.charAt(i) == '}') {
+                numberToConvertList.add("55");
+            }
+            if (numberToConvert.charAt(i) == '|') {
+                numberToConvertList.add("56");
+            }
+            if (numberToConvert.charAt(i) == ';') {
+                numberToConvertList.add("57");
+            }
+            if (numberToConvert.charAt(i) == ':') {
+                numberToConvertList.add("58");
+            }
+            if (numberToConvert.charAt(i) == '/') {
+                numberToConvertList.add("59");
+            }
+            if (numberToConvert.charAt(i) == '?') {
+                numberToConvertList.add("60");
+            }
+            if (numberToConvert.charAt(i) == '>') {
+                numberToConvertList.add("61");
+            }
+            if (numberToConvert.charAt(i) == '<') {
+                numberToConvertList.add("62");
+            }
+            if (numberToConvert.charAt(i) == ',') {
+                numberToConvertList.add("63");
+            }
+            if (numberToConvert.charAt(i) == '.') {
+                numberToConvertList.add("64");
+            }
+
         }
 
 
-
         int sizeOfListToConvert = numberToConvertList.size();
-        int decimalValue = 0;
+        long decimalValue = 0;
         double decrementator = 1;
+
 
         for (int i = 0; i < sizeOfListToConvert; i++) {
             Integer numberToConvertListCharAti = Integer.parseInt(String.valueOf(numberToConvertList.get(i)));
@@ -78,35 +240,33 @@ public class Convert {
             decrementator++;
         }
 
-        if (decimalValue >= 2147483647){
-            System.out.println("Liczba w systemie dziesiętnym większa niż 2147483647! Nie mogę jej wyświetlić!");
-        }
-        else {
+        if (decimalValue >= 9223372036854775807l) {
+            System.out.println("Liczba w systemie dziesiętnym większa niż 9,223,372,036,854,775,807! Nie mogę jej wyświetlić!");
+        } else {
             System.out.println("");
-            System.out.println("Liczba w systemie dziesiętnym: " + (int) decimalValue);
+            System.out.println("Liczba w systemie dziesiętnym: " + (long) decimalValue);
         }
 
         List<Integer> convertedNumberList = new ArrayList<>();
 
 
-
         int decimalValueLength = String.valueOf(decimalValue).length();
 
 
-        for(int i = 0; i < decimalValueLength; i++){
+        for (int i = 0; i < decimalValueLength; i++) {
             convertedNumberList.add(Integer.parseInt(String.valueOf(String.valueOf(decimalValue).charAt(i))));
         }
 
 
-        List <Integer> finalNumberList = new ArrayList<>();
+        List<Long> finalNumberList = new ArrayList<>();
 
-        int decimalValueCopy = decimalValue;
+        long decimalValueCopy = decimalValue;
         double sumOfPowering;
         double sumOfAll;
         int multiplier;
         int intValueOfSystemEnd = systemEnd;
 
-        for (int i = 35; i >= 0; i--) {
+        for (int i = 70; i >= 0; i--) {
 
             for (multiplier = (intValueOfSystemEnd - 1); multiplier > 0; multiplier--) {
 
@@ -121,28 +281,28 @@ public class Convert {
                 } else {
 
                     if (sumOfAll <= decimalValueCopy) {
-                        finalNumberList.add(multiplier);
+                        finalNumberList.add((long) multiplier);
                         decimalValueCopy -= sumOfAll;
                         break;
 
                     }
 
                     if (finalNumberList.size() != 0 && multiplier == 1 && sumOfAll > decimalValueCopy) {
-                        finalNumberList.add(0);
+                        finalNumberList.add(0L);
                         break;
                     }
 
                 }
-}
-
             }
+
+        }
 
 
         Integer finalNumberListSize = finalNumberList.size();
-        Integer[] newFinalNumberList = new Integer[finalNumberList.size()];
+        Long[] newFinalNumberList = new Long[finalNumberList.size()];
 
         for (int i = 0; i < finalNumberListSize; i++) {
-            int j = finalNumberList.get(i);
+            long j = finalNumberList.get(i);
             newFinalNumberList[i] = j;
         }
 
@@ -290,6 +450,97 @@ public class Convert {
             case "36":
                 valueOfSystemEnd = "hexatrigintalnym(trzydziesto-szóstkowym [36]): ";
                 break;
+            case "37":
+                valueOfSystemEnd = "septatrigintalnym(trzydziesto-siódemkowym [37]): ";
+                break;
+            case "38":
+                valueOfSystemEnd = "oktaatrigintalnym(trzydziesto-ósemkowym [38]): ";
+                break;
+            case "39":
+                valueOfSystemEnd = "nanotrigintalnym(trzydziesto-dziewiątkowym [39]): ";
+                break;
+            case "40":
+                valueOfSystemEnd = "tetragintalnym(czterdziestkowym [40]): ";
+                break;
+            case "41":
+                valueOfSystemEnd = "untetragintalnym(czterdziesto-jedynkowym [41]): ";
+                break;
+            case "42":
+                valueOfSystemEnd = "duotetragintalnym(czterdziesto-dwójkowym [42]): ";
+                break;
+            case "43":
+                valueOfSystemEnd = "tritetragintalnym(czterdziesto-trójkowym [43]): ";
+                break;
+            case "44":
+                valueOfSystemEnd = "tetratetragintalnym(czterdziesto-czwórkowym [44]): ";
+                break;
+            case "45":
+                valueOfSystemEnd = "pentatetragintalnym(czterdziesto-piątkowym [45]): ";
+                break;
+            case "46":
+                valueOfSystemEnd = "hexatetragintalnym(czterdziesto-szóstkowym [46]): ";
+                break;
+            case "47":
+                valueOfSystemEnd = "septatetragintalnym(czterdziesto-siódemkowym [47]): ";
+                break;
+            case "48":
+                valueOfSystemEnd = "oktatetragintalnym(czterdziesto-ósemkowym [48]): ";
+                break;
+            case "49":
+                valueOfSystemEnd = "nanotetragintalnym(czterdziesto-dziewiątkowym [49]): ";
+                break;
+            case "50":
+                valueOfSystemEnd = "pentagintalnym(pięćdziesiątkowym [50]): ";
+                break;
+            case "51":
+                valueOfSystemEnd = "unpentagintalnym(pięćdziesięcio-jedynkowym [51]): ";
+                break;
+            case "52":
+                valueOfSystemEnd = "duopentagintalnym(pięćdziesięcio-dwójkowym [52]): ";
+                break;
+            case "53":
+                valueOfSystemEnd = "tripentagintalnym(pięćdziesięcio-trójkowym [53]): ";
+                break;
+            case "54":
+                valueOfSystemEnd = "tetrapentagintalnym(pięćdziesięcio-czwórkowym [54]): ";
+                break;
+            case "55":
+                valueOfSystemEnd = "pentapentagintalnym(pięćdziesięcio-piątkowym [55]): ";
+                break;
+            case "56":
+                valueOfSystemEnd = "hexapentagintalnym(pięćdziesięcio-szóstkowym [56]): ";
+                break;
+            case "57":
+                valueOfSystemEnd = "septapentagintalnym(pięćdziesięcio-siódemkowym [57]): ";
+                break;
+            case "58":
+                valueOfSystemEnd = "oktapentagintalnym(pięćdziesięcio-ósemkowym [58]): ";
+                break;
+            case "59":
+                valueOfSystemEnd = "nanopentagintalnym(pięćdziesięcio-dziewiątkowym [59]): ";
+                break;
+            case "60":
+                valueOfSystemEnd = "hexagintalnym(sześćdziesiątkowym [60]): ";
+                break;
+            case "61":
+                valueOfSystemEnd = "unhexagintalnym(sześćdziesięcio-jedynkowym [61]): ";
+                break;
+            case "62":
+                valueOfSystemEnd = "duohexagintalnym(sześćdziesięcio-dwójkowym [62]): ";
+                break;
+            case "63":
+                valueOfSystemEnd = "trihexagintalnym(sześćdziesięcio-trójkowym [63]): ";
+                break;
+            case "64":
+                valueOfSystemEnd = "tetrahexagintalnym(sześćdziesięcio-czwórkowym [64]): ";
+                break;
+            case "65":
+                valueOfSystemEnd = "pentahexagintalnym(sześćdziesięcio-piątkowym [65]): ";
+                break;
+            case "66":
+                valueOfSystemEnd = "hexahexagintalnym(sześćdziesięcio-szóstkowym [66]): ";
+                break;
+
 
         }
         System.out.println("");
@@ -312,48 +563,104 @@ public class Convert {
                 makingCharacterList.add("E");
             } else if (newFinalNumberList[i] == 15) {
                 makingCharacterList.add("F");
-            }else if (newFinalNumberList[i] == 16) {
+            } else if (newFinalNumberList[i] == 16) {
                 makingCharacterList.add("G");
-            }else if (newFinalNumberList[i] == 17) {
+            } else if (newFinalNumberList[i] == 17) {
                 makingCharacterList.add("H");
-            }else if (newFinalNumberList[i] == 18) {
+            } else if (newFinalNumberList[i] == 18) {
                 makingCharacterList.add("I");
-            }else if (newFinalNumberList[i] == 19) {
+            } else if (newFinalNumberList[i] == 19) {
                 makingCharacterList.add("J");
-            }else if (newFinalNumberList[i] == 20) {
+            } else if (newFinalNumberList[i] == 20) {
                 makingCharacterList.add("K");
-            }else if (newFinalNumberList[i] == 21) {
+            } else if (newFinalNumberList[i] == 21) {
                 makingCharacterList.add("L");
-            }else if (newFinalNumberList[i] == 22) {
+            } else if (newFinalNumberList[i] == 22) {
                 makingCharacterList.add("M");
-            }else if (newFinalNumberList[i] == 23) {
+            } else if (newFinalNumberList[i] == 23) {
                 makingCharacterList.add("N");
-            }else if (newFinalNumberList[i] == 24) {
+            } else if (newFinalNumberList[i] == 24) {
                 makingCharacterList.add("O");
-            }else if (newFinalNumberList[i] == 25) {
+            } else if (newFinalNumberList[i] == 25) {
                 makingCharacterList.add("P");
-            }else if (newFinalNumberList[i] == 26) {
+            } else if (newFinalNumberList[i] == 26) {
                 makingCharacterList.add("Q");
-            }else if (newFinalNumberList[i] == 27) {
+            } else if (newFinalNumberList[i] == 27) {
                 makingCharacterList.add("R");
-            }else if (newFinalNumberList[i] == 28) {
+            } else if (newFinalNumberList[i] == 28) {
                 makingCharacterList.add("S");
-            }else if (newFinalNumberList[i] == 29) {
+            } else if (newFinalNumberList[i] == 29) {
                 makingCharacterList.add("T");
-            }else if (newFinalNumberList[i] == 30) {
+            } else if (newFinalNumberList[i] == 30) {
                 makingCharacterList.add("U");
-            }else if (newFinalNumberList[i] == 31) {
+            } else if (newFinalNumberList[i] == 31) {
                 makingCharacterList.add("V");
-            }else if (newFinalNumberList[i] == 32) {
+            } else if (newFinalNumberList[i] == 32) {
                 makingCharacterList.add("W");
-            }else if (newFinalNumberList[i] == 33) {
+            } else if (newFinalNumberList[i] == 33) {
                 makingCharacterList.add("X");
-            }else if (newFinalNumberList[i] == 34) {
+            } else if (newFinalNumberList[i] == 34) {
                 makingCharacterList.add("Y");
-            }else if (newFinalNumberList[i] == 35) {
+            } else if (newFinalNumberList[i] == 35) {
                 makingCharacterList.add("Z");
-            }else if (newFinalNumberList[i] == 36) {
-                makingCharacterList.add("F");
+            } else if (newFinalNumberList[i] == 36) {
+                makingCharacterList.add("€");
+            } else if (newFinalNumberList[i] == 37) {
+                makingCharacterList.add("~");
+            } else if (newFinalNumberList[i] == 38) {
+                makingCharacterList.add("`");
+            } else if (newFinalNumberList[i] == 39) {
+                makingCharacterList.add("!");
+            } else if (newFinalNumberList[i] == 40) {
+                makingCharacterList.add("@");
+            } else if (newFinalNumberList[i] == 41) {
+                makingCharacterList.add("#");
+            } else if (newFinalNumberList[i] == 42) {
+                makingCharacterList.add("$");
+            } else if (newFinalNumberList[i] == 43) {
+                makingCharacterList.add("%");
+            } else if (newFinalNumberList[i] == 44) {
+                makingCharacterList.add("^");
+            } else if (newFinalNumberList[i] == 45) {
+                makingCharacterList.add("&");
+            } else if (newFinalNumberList[i] == 46) {
+                makingCharacterList.add("*");
+            } else if (newFinalNumberList[i] == 47) {
+                makingCharacterList.add("(");
+            } else if (newFinalNumberList[i] == 48) {
+                makingCharacterList.add(")");
+            } else if (newFinalNumberList[i] == 49) {
+                makingCharacterList.add("_");
+            } else if (newFinalNumberList[i] == 50) {
+                makingCharacterList.add("-");
+            } else if (newFinalNumberList[i] == 51) {
+                makingCharacterList.add("=");
+            } else if (newFinalNumberList[i] == 52) {
+                makingCharacterList.add("[");
+            } else if (newFinalNumberList[i] == 53) {
+                makingCharacterList.add("]");
+            } else if (newFinalNumberList[i] == 54) {
+                makingCharacterList.add("{");
+            } else if (newFinalNumberList[i] == 55) {
+                makingCharacterList.add("}");
+            } else if (newFinalNumberList[i] == 56) {
+                makingCharacterList.add("|");
+            } else if (newFinalNumberList[i] == 57) {
+                makingCharacterList.add(";");
+            } else if (newFinalNumberList[i] == 58) {
+                makingCharacterList.add(":");
+            } else if (newFinalNumberList[i] == 59) {
+                makingCharacterList.add("/");
+            } else if (newFinalNumberList[i] == 60) {
+                makingCharacterList.add("?");
+            } else if (newFinalNumberList[i] == 61) {
+                makingCharacterList.add(">");
+            } else if (newFinalNumberList[i] == 62) {
+                makingCharacterList.add("<");
+            } else if (newFinalNumberList[i] == 63) {
+                makingCharacterList.add(",");
+            } else if (newFinalNumberList[i] == 64) {
+                makingCharacterList.add(".");
             } else {
                 makingCharacterList.add(newFinalNumberList[i].toString());
             }
@@ -363,11 +670,6 @@ public class Convert {
         }
         exit.exit();
     }
-
-
-
-
-
 
 
 }
