@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 public class Convert {
 
+    Exit exit = new Exit();
+
     Scanner scanner = new Scanner(System.in);
 
     public void startConverting() {
@@ -245,6 +247,7 @@ public class Convert {
         for (int i = 0; i < (makingCharacterList.size()); i++) {
             System.out.print(makingCharacterList.get(i));
         }
+        exit.exit();
     }
 
 

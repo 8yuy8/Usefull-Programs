@@ -37,7 +37,7 @@ public class Main {
 
             switch (choosenNumber) {
             case "1":
-               // Cipher.startEncrypting();
+                cipher.startEncrypting();
                 break;
             case "2":
                 convert.startConverting();
