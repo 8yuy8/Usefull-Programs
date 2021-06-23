@@ -263,8 +263,6 @@ public class Convert {
 
         int decimalValueLengthCopy = decimalValueLength;
 
-        int numberToDegree = 0;
-
         for (int i = 0; i < 3; i++) {
 
             if (decimalValueLengthCopy % 4 == 0) {
