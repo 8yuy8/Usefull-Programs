@@ -1,5 +1,6 @@
 package General;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -30,7 +31,7 @@ public class Convert {
 
 
         for (int i = 0; i < numberToConvert.length(); i++) {
-                 if(numberToConvert.charAt(i) != 'A' && numberToConvert.charAt(i) != 'a' && numberToConvert.charAt(i) != '~' &&
+            if(numberToConvert.charAt(i) != 'A' && numberToConvert.charAt(i) != 'a' && numberToConvert.charAt(i) != '~' &&
                     numberToConvert.charAt(i) != 'B' && numberToConvert.charAt(i) != 'b' && numberToConvert.charAt(i) != '`' &&
                     numberToConvert.charAt(i) != 'C' && numberToConvert.charAt(i) != 'c' && numberToConvert.charAt(i) != '!' &&
                     numberToConvert.charAt(i) != 'D' && numberToConvert.charAt(i) != 'd' && numberToConvert.charAt(i) != '@' &&
@@ -58,7 +59,7 @@ public class Convert {
                     numberToConvert.charAt(i) != 'Z' && numberToConvert.charAt(i) != 'z' && numberToConvert.charAt(i) != '.' &&
                     numberToConvert.charAt(i) != '+' && numberToConvert.charAt(i) != ';' && numberToConvert.charAt(i) != ':' &&
                     numberToConvert.charAt(i) != '€'
-                 ) {
+            ) {
                 numberToConvertList.add(String.valueOf(numberToConvert.charAt(i)));
             }
             if (numberToConvert.charAt(i) == 'A' || numberToConvert.charAt(i) == 'a') {
@@ -234,7 +235,7 @@ public class Convert {
 
 
         int sizeOfListToConvert = numberToConvertList.size();
-        long decimalValue = 0;
+        double decimalValue = 0;
         double decrementator = 1;
 
 
@@ -245,33 +246,47 @@ public class Convert {
             decrementator++;
         }
 
-        if (decimalValue >= 9223372036854775807l) {
-            System.out.println("Liczba w systemie dziesiętnym większa niż 9,223,372,036,854,775,807! Nie mogę jej wyświetlić!");
+        if (decimalValue >= Double.MAX_VALUE) {
+            System.out.println("Liczba w systemie dziesiętnym ma ponad 308 cyfr. Nie mogę jej wyświetlić.");
+            exit.exit();
         } else {
             System.out.println("");
-            System.out.println("Liczba w systemie dziesiętnym: " + (long) decimalValue);
+            System.out.println("Liczba w systemie dziesiętnym: " + new DecimalFormat("###,###,###").format(decimalValue));
         }
+
+        decimalValue = Double.parseDouble(new DecimalFormat("#").format(decimalValue));
 
         List<Integer> convertedNumberList = new ArrayList<>();
 
 
         int decimalValueLength = String.valueOf(decimalValue).length();
 
+        int decimalValueLengthCopy = decimalValueLength;
 
-        for (int i = 0; i < decimalValueLength; i++) {
-            convertedNumberList.add(Integer.parseInt(String.valueOf(String.valueOf(decimalValue).charAt(i))));
+        int numberToDegree = 0;
+
+        for (int i = 0; i < 3; i++) {
+
+            if (decimalValueLengthCopy % 4 == 0) {
+                decimalValueLength = decimalValueLengthCopy / 4 * 3;
+            }
+            else if (decimalValueLengthCopy % 4 != 0) {
+                decimalValueLength -= 1;
+            }
+
         }
+
 
 
         List<Long> finalNumberList = new ArrayList<>();
 
-        long decimalValueCopy = decimalValue;
+        double decimalValueCopy = decimalValue;
         double sumOfPowering;
         double sumOfAll;
         int multiplier;
         int intValueOfSystemEnd = systemEnd;
 
-        for (int i = 70; i >= 0; i--) {
+        for (int i = 309; i >= 0; i--) {
 
             for (multiplier = (intValueOfSystemEnd - 1); multiplier > 0; multiplier--) {
 
@@ -280,7 +295,7 @@ public class Convert {
 
 
                 if (decimalValueCopy < systemEnd) {
-                    finalNumberList.add(decimalValueCopy);
+                    finalNumberList.add ((long)decimalValueCopy);
                     decimalValueCopy -= decimalValueCopy;
                     break;
                 } else {
